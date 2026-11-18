@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عطار بلد — طبیعت در خدمت سلامتی</title>
+<meta name="description" content="عطار بلد؛ گیاهان دارویی، عصاره‌ها، ادویه‌جات و فرآورده‌های گیاهی اصیل ایرانی. سفری در تاریخ، طبیعت و سلامت ایران.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- icon sprite -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 17.5h18M4.2 6.4l3.9 4.1L12 4.6l3.9 5.9 3.9-4.1-2 11.1H6.2z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.4"/><path d="m16 16 4 4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.2" r="3.6"/><path d="M5.2 20c0-3.5 3-5.6 6.8-5.6s6.8 2.1 6.8 5.6"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3.6 4.6h2.2l2.3 9.6h9.5l2.1-7.2H6.6"/><circle cx="9.6" cy="18.6" r="1.4"/><circle cx="17" cy="18.6" r="1.4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19.5 12H5"/><path d="m11 6-6 6 6 6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4c.4 9.4-5.2 13.4-11 13.4H4.6C4.2 8.9 9.8 4 20 4z"/><path d="M4.8 19.6c2.8-4.8 6-7.8 10.4-10"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.4c0-.9.7-1.6 1.6-1.6H11v15.4H5.6c-.9 0-1.6.7-1.6 1.6z"/><path d="M20 5.4c0-.9-.7-1.6-1.6-1.6H13v15.4h5.4c.9 0 1.6.7 1.6 1.6z"/></symbol>
+  <symbol id="i-jar" viewBox="0 0 24 24"><path d="M10 3.4h4v1.9l1.6 1.6V20H8.4V6.9L10 5.3z"/><path d="M8.6 12.4h6.8"/></symbol>
+  <symbol id="i-mortar" viewBox="0 0 24 24"><path d="M4 10.4h16l-1.8 8.2H5.8z"/><path d="M12 10.4V4.6"/><path d="M9.2 4.6h5.6"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5.4 8.4h11v4.4a5.5 5.5 0 0 1-5.5 5.5 5.5 5.5 0 0 1-5.5-5.5z"/><path d="M16.4 9.6h1.8a2.2 2.2 0 0 1 0 4.4h-1.8"/><path d="M4 20.6h14"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.6 2.4 5.4 5.7.6-4.3 4 1.2 5.7L12 16.4l-5 2.9 1.2-5.7-4.3-4 5.7-.6z"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.4 3.4h5.2v3.9l4 10.1a2 2 0 0 1-1.9 2.7H7.3a2 2 0 0 1-1.9-2.7l4-10.1z"/><path d="M9.4 7.3h5.2"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.2S3.8 15.4 3.8 9.6A4.4 4.4 0 0 1 12 7.1a4.4 4.4 0 0 1 8.2 2.5c0 5.8-8.2 10.6-8.2 10.6z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.1" cy="6.9" r="1"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.6" width="18" height="12.8" rx="2.4"/><path d="M3 10.2h18"/><path d="M6.6 14.6h3.2"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6.6h10.4v9.6H3z"/><path d="M13.4 9.6h3.9l3.1 3.2v3.4h-7z"/><circle cx="7" cy="18" r="1.7"/><circle cx="17" cy="18" r="1.7"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M3.8 5.6h16.4v10.6h-9.9L3.8 20z"/><path d="M8 10.4h8"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 3.4 1.9 5.4 5.4 1.9-5.4 1.9L12 18l-1.9-5.4L4.7 10.7l5.4-1.9z"/><path d="M18.4 16.6l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 3 8 4.4v9.2L12 21l-8-4.4V7.4z"/><path d="m4 7.4 8 4.4 8-4.4"/><path d="M12 11.8V21"/></symbol>
+  <symbol id="i-garden" viewBox="0 0 24 24"><path d="M12 20.6V12"/><path d="M12 13.4c-4.2 0-6.4-2.6-6.4-6.4 4.2 0 6.4 2.6 6.4 6.4z"/><path d="M12 13.4c4.2 0 6.4-2.6 6.4-6.4-4.2 0-6.4 2.6-6.4 6.4z"/><path d="M7 20.6h10"/></symbol>
+  <symbol id="i-article" viewBox="0 0 24 24"><path d="M6 3.6h9.2L19 7.4v13H6z"/><path d="M15 3.6v4h4"/><path d="M9 12h7M9 15.4h7"/></symbol>
+  <symbol id="i-expert" viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.4"/><path d="M5.4 20.4c0-3.5 2.9-5.6 6.6-5.6s6.6 2.1 6.6 5.6"/><path d="M18.6 4.2v3M17.1 5.7h3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+</svg>
+
+<a class="skip" href="#categories">رفتن به محصولات</a>
+
+<div class="utility">
+  <div class="utility__inner">
+    <div class="utility__start">
+      <form class="search" role="search" onsubmit="return false">
+        <label class="sr" for="q">جست‌وجو</label>
+        <input id="q" type="search" name="q" placeholder="جست‌وجو در محصولات…" autocomplete="off" data-ph-fa="جست‌وجو در محصولات…" data-ph-en="Search products…">
+        <button class="search__btn" type="submit" aria-label="جست‌وجو">
+          <svg class="ico"><use href="#i-search"/></svg>
+        </button>
+      </form>
+      <div class="lang" role="group" aria-label="زبان / Language">
+        <button class="lang__btn is-on" type="button" data-lang="fa" aria-pressed="true">Fa</button>
+        <span class="lang__sep" aria-hidden="true">/</span>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">En</button>
+      </div>
+    </div>
+    <div class="utility__end">
+      <button class="iconbtn" type="button" aria-label="سبد خرید، ۰ کالا">
+        <svg class="ico"><use href="#i-cart"/></svg>
+        <span class="badge">۰</span>
+      </button>
+      <a class="login" href="#">
+        <svg class="ico"><use href="#i-user"/></svg>
+        <span data-fa="ورود / ثبت‌نام" data-en="Sign in">ورود / ثبت‌نام</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainnav" aria-label="منو">
+      <svg class="ico"><use href="#i-menu"/></svg>
+    </button>
+    <nav class="mainnav" id="mainnav" aria-label="منوی اصلی">
+      <a href="#home" class="is-active" data-fa="خانه" data-en="Home">خانه</a>
+      <a href="#categories" data-fa="فروشگاه" data-en="Shop">فروشگاه</a>
+      <a href="#categories" data-fa="گیاهان دارویی" data-en="Herbs">گیاهان دارویی</a>
+      <a href="#categories" data-fa="دمنوش‌ها" data-en="Infusions">دمنوش‌ها</a>
+      <a href="#history" data-fa="تاریخ طب ایران" data-en="History">تاریخ طب ایران</a>
+      <a href="#services" data-fa="درباره ما" data-en="About">درباره ما</a>
+      <a href="#footer" data-fa="تماس با ما" data-en="Contact">تماس با ما</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero__scene" aria-hidden="true">
+      <img src="assets/courtyard.svg" alt="" width="1600" height="900" fetchpriority="high">
+    </div>
+
+    <div class="hero__inner">
+      <div class="hero__main">
+        <p class="kicker"><span>سلطنتی</span></p>
+        <h1 class="hero__brand">
+          <svg class="hero__crown" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crown"/></svg>
+          <span>عطار بلد</span>
+        </h1>
+        <p class="hero__tagline">طبیعت در خدمت سلامتی</p>
+        <p class="hero__sub">با اصالت طبیعت به نسل سالم‌تری می‌اندیشیم</p>
+        <a class="btn btn--gold" href="#categories">
+          <span>مشاهده محصولات</span>
+          <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+
+      <aside class="hero__rail" aria-label="مسیرهای اصلی">
+        <a class="rail__item" href="#categories">
+          <span class="rail__ring"><svg class="ico"><use href="#i-leaf"/></svg></span>
+          <span class="rail__label">گیاهان دارویی</span>
+        </a>
+        <a class="rail__item" href="#history">
+          <span class="rail__ring"><svg class="ico"><use href="#i-book"/></svg></span>
+          <span class="rail__label">تاریخ ایران</span>
+        </a>
+        <a class="rail__item" href="#categories">
+          <span class="rail__ring"><svg class="ico"><use href="#i-jar"/></svg></span>
+          <span class="rail__label">محصولات ایران</span>
+        </a>
+        <a class="rail__item" href="#tour">
+          <span class="rail__ring"><svg class="ico"><use href="#i-cube"/></svg></span>
+          <span class="rail__label">تور مجازی</span>
+        </a>
+        <p class="rail__note">سفری در تاریخ،<br>طبیعت و سلامت ایران</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="services" id="services" aria-label="خدمات فروشگاه">
+    <ul class="services__list">
+      <li>
+        <span class="services__ico"><svg class="ico"><use href="#i-instagram"/></svg></span>
+        <span class="services__text">
+          <strong>پاسخ خودکار دایرکت اینستاگرام</strong>
+          <small>پاسخ فوری، هر ساعت از شبانه‌روز</small>
+        </span>
+      </li>
+      <li>
+        <span class="services__ico"><svg class="ico"><use href="#i-card"/></svg></span>
+        <span class="services__text">
+          <strong>پرداخت امن زرین‌پال</strong>
+          <small>درگاه بانکی و کارت‌های شتاب</small>
+        </span>
+      </li>
+      <li>
+        <span class="services__ico"><svg class="ico"><use href="#i-truck"/></svg></span>
+        <span class="services__text">
+          <strong>ارسال سریع</strong>
+          <small>پست، تیپاکس، پیک شهری</small>
+        </span>
+      </li>
+      <li>
+        <span class="services__ico"><svg class="ico"><use href="#i-chat"/></svg></span>
+        <span class="services__text">
+          <strong>چت‌بات پشتیبانی</strong>
+          <small>راهنمای خرید و انتخاب گیاه</small>
+        </span>
+      </li>
+      <li>
+        <span class="services__ico"><svg class="ico"><use href="#i-sparkle"/></svg></span>
+        <span class="services__text">
+          <strong>پیشنهاد محصول مرتبط</strong>
+          <small>بر پایه سبد خرید شما</small>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">فروشگاه</p>
+        <h2 class="section__title">دسته‌بندی محصولات</h2>
+      </div>
+      <a class="link-more" href="#categories">
+        <span>همه محصولات</span>
+        <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+
+    <ul class="cats">
+      <li class="cat">
+        <a href="#categories">
+          <span class="cat__art cat__art--oil"><svg class="ico"><use href="#i-jar"/></svg></span>
+          <span class="cat__name">عصاره‌ها و روغن‌ها</span>
+          <span class="cat__meta">۲۴ محصول</span>
+        </a>
+      </li>
+      <li class="cat">
+        <a href="#categories">
+          <span class="cat__art cat__art--spice"><svg class="ico"><use href="#i-mortar"/></svg></span>
+          <span class="cat__name">ادویه‌جات</span>
+          <span class="cat__meta">۳۸ محصول</span>
+        </a>
+      </li>
+      <li class="cat">
+        <a href="#categories">
+          <span class="cat__art cat__art--herb"><svg class="ico"><use href="#i-leaf"/></svg></span>
+          <span class="cat__name">گیاهان دارویی</span>
+          <span class="cat__meta">۵۲ محصول</span>
+        </a>
+      </li>
+      <li class="cat">
+        <a href="#categories">
+          <span class="cat__art cat__art--tea"><svg class="ico"><use href="#i-cup"/></svg></span>
+          <span class="cat__name">دمنوش‌ها</span>
+          <span class="cat__meta">۱۹ محصول</span>
+        </a>
+      </li>
+      <li class="cat">
+        <a href="#categories">
+          <span class="cat__art cat__art--special"><svg class="ico"><use href="#i-star"/></svg></span>
+          <span class="cat__name">محصولات ویژه</span>
+          <span class="cat__meta">۱۲ محصول</span>
+        </a>
+      </li>
+      <li class="cat">
+        <a href="#categories">
+          <span class="cat__art cat__art--herbal"><svg class="ico"><use href="#i-flask"/></svg></span>
+          <span class="cat__name">فرآورده‌های گیاهی</span>
+          <span class="cat__meta">۳۱ محصول</span>
+        </a>
+      </li>
+      <li class="cat">
+        <a href="#categories">
+          <span class="cat__art cat__art--health"><svg class="ico"><use href="#i-heart"/></svg></span>
+          <span class="cat__name">محصولات سلامت</span>
+          <span class="cat__meta">۲۷ محصول</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="history" id="history">
+    <div class="history__glow" aria-hidden="true"></div>
+    <div class="history__inner">
+      <div class="history__head">
+        <div>
+          <p class="eyebrow eyebrow--gold">تاریخ طب ایران</p>
+          <h2 class="history__title">سفر در تاریخ طب ایران</h2>
+          <p class="history__sub">از عهد باستان تا امروز</p>
+        </div>
+        <a class="btn btn--ghost" href="#tour">
+          <svg class="ico" aria-hidden="true"><use href="#i-cube"/></svg>
+          <span>مشاهده در سه‌بعدی</span>
+        </a>
+      </div>
+
+      <div class="timeline" role="tablist" aria-label="دوره‌های تاریخی">
+        <button class="era is-active" type="button" role="tab" aria-selected="true" data-era="persepolis">
+          <span class="era__dot" aria-hidden="true"></span>
+          <span class="era__name">تخت جمشید</span>
+          <span class="era__date">۵۵۰ پ.م</span>
+        </button>
+        <button class="era" type="button" role="tab" aria-selected="false" data-era="ecbatana">
+          <span class="era__dot" aria-hidden="true"></span>
+          <span class="era__name">هگمتانه</span>
+          <span class="era__date">۷۰۰ پ.م</span>
+        </button>
+        <button class="era" type="button" role="tab" aria-selected="false" data-era="sasanian">
+          <span class="era__dot" aria-hidden="true"></span>
+          <span class="era__name">ساسانیان</span>
+          <span class="era__date">۲۲۴ م</span>
+        </button>
+        <button class="era" type="button" role="tab" aria-selected="false" data-era="islamic">
+          <span class="era__dot" aria-hidden="true"></span>
+          <span class="era__name">دوره اسلامی</span>
+          <span class="era__date">۹۰۰ م</span>
+        </button>
+        <button class="era" type="button" role="tab" aria-selected="false" data-era="safavid">
+          <span class="era__dot" aria-hidden="true"></span>
+          <span class="era__name">دوره صفوی</span>
+          <span class="era__date">۱۵۰۱ م</span>
+        </button>
+        <button class="era" type="button" role="tab" aria-selected="false" data-era="modern">
+          <span class="era__dot" aria-hidden="true"></span>
+          <span class="era__name">ایران معاصر</span>
+          <span class="era__date">۱۳۱۳ ش</span>
+        </button>
+      </div>
+
+      <p class="history__caption" id="eraCaption" aria-live="polite">
+        کتیبه‌های باروی تخت جمشید، گیاهان دارویی و سهم آن‌ها در انبارهای شاهی را ثبت کرده‌اند.
+      </p>
+    </div>
+  </section>
+
+  <section class="section cards" id="tour">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">تجربه عطار بلد</p>
+        <h2 class="section__title">بیشتر از یک فروشگاه</h2>
+      </div>
+    </div>
+
+    <ul class="triple">
+      <li class="feature">
+        <span class="feature__ico"><svg class="ico"><use href="#i-garden"/></svg></span>
+        <h3 class="feature__title">تور مجازی باغ گیاهان دارویی</h3>
+        <p class="feature__sub">تجربه‌ای متفاوت از طبیعت</p>
+        <a class="btn btn--line" href="#tour"><span>ورود</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </li>
+      <li class="feature">
+        <span class="feature__ico"><svg class="ico"><use href="#i-article"/></svg></span>
+        <h3 class="feature__title">مقالات و آموزش‌ها</h3>
+        <p class="feature__sub">دانش طبیعت در زندگی روزمره</p>
+        <a class="btn btn--line" href="#tour"><span>مطالعه کنید</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </li>
+      <li class="feature">
+        <span class="feature__ico"><svg class="ico"><use href="#i-expert"/></svg></span>
+        <h3 class="feature__title">مشاوره با متخصصان</h3>
+        <p class="feature__sub">پرسش‌های خود را مطرح کنید</p>
+        <a class="btn btn--line" href="#tour"><span>شروع مشاوره</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__mark">
+        <svg class="footer__crown" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crown"/></svg>
+        <span>عطار بلد</span>
+      </div>
+      <p class="footer__about">گیاهان دارویی، عصاره‌ها و ادویه‌جات ایرانی؛ با اصالت طبیعت به نسل سالم‌تری می‌اندیشیم.</p>
+    </div>
+
+    <nav class="footer__col" aria-label="دسترسی سریع">
+      <h2 class="footer__h">دسترسی سریع</h2>
+      <a href="#categories">فروشگاه</a>
+      <a href="#history">تاریخ طب ایران</a>
+      <a href="#tour">تور مجازی</a>
+      <a href="#services">درباره ما</a>
+    </nav>
+
+    <div class="footer__col">
+      <h2 class="footer__h">پشتیبانی</h2>
+      <a href="#footer">تماس با ما</a>
+      <a href="#footer">شرایط ارسال</a>
+      <a href="#footer">بازگشت کالا</a>
+      <a href="#footer">پرسش‌های پرتکرار</a>
+    </div>
+
+    <div class="footer__col footer__col--badges">
+      <h2 class="footer__h">اعتماد و پرداخت</h2>
+      <ul class="badges">
+        <li>نماد اعتماد الکترونیکی</li>
+        <li>زرین‌پال</li>
+        <li>پرداخت بانکی</li>
+        <li>تیپاکس</li>
+        <li>پیک شهری</li>
+        <li class="badges__social">
+          <a href="#footer" aria-label="اینستاگرام عطار بلد">
+            <svg class="ico"><use href="#i-instagram"/></svg>
+            <span>اینستاگرام</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer__legal">© ۱۴۰۴ عطار بلد — تمام حقوق محفوظ است.</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
