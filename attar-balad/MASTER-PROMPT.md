@@ -140,9 +140,10 @@ outlined chips: نماد اعتماد الکترونیکی، زرین‌پال،
   `--ink-soft` or darker; every icon-only control has an `aria-label`.
 - Semantic landmarks (`header`, `main`, `nav`, `footer`, `section` with a
   heading), one `h1`, a skip link, and `prefers-reduced-motion` respected.
-- Static HTML/CSS/vanilla JS, no framework, no build step, no external images —
-  the hero scene and icons are inline SVG. Only optional remote dependency: the
-  Persian webfont, with a Tahoma fallback.
+- Static HTML/CSS/vanilla JS, no framework, no build step, no third-party image
+  CDNs — photography comes only from `image-library/` (see “Image standard”
+  below); icons are inline SVG. Only optional remote dependency: the Persian
+  webfont, with a Tahoma fallback.
 
 ### 5. Done means
 
@@ -150,3 +151,23 @@ The page renders the whole sequence above, RTL and Persian throughout, with the
 seven arch category tiles on one row on desktop and two on mobile, a working
 era timeline, a working mobile menu, no console errors, and no sideways scroll
 at 360px or 1440px.
+
+---
+
+## Image standard (fixed rule — applies to every dried-herb product)
+
+1. Only dried plant matter goes inside a **copper bowl**.
+2. The plant must look **natural, loose and real** — with stems, leaves and dried
+   flowers. No uniform powder, no decorative styling, no fresh flowers standing
+   in for the product.
+3. Each product's look is matched against real samples from the apothecaries
+   **مشکستان** and **عطارک**: colour, texture, piece size and how finely it is
+   broken.
+4. **Logo, frame, colours, historical architecture, lighting and all text stay
+   untouched.** The template is fixed; only the plant (and the product inside the
+   copper bowl) changes.
+
+Files live in `image-library/` (one folder per category, catalogue links in
+`PRODUCT-DATABASE/products.json`); the full checklist is in
+`image-library/IMAGE-STANDARD.md`. The page must only reference images from that
+library.
