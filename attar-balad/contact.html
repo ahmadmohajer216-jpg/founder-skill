@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تماس با ما — عطار بلد</title>
+<meta name="description" content="راه‌های تماس با عطار بلد: تلفن، ایمیل، نشانی و فرم پیام.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314532d' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M20 4c.4 9.4-5.2 13.4-11 13.4H4.6C4.2 8.9 9.8 4 20 4z'/%3E%3Cpath d='M4.8 19.6c2.8-4.8 6-7.8 10.4-10'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="ab-body" data-page="contact">
+<a class="ab-skip" href="#main">رفتن به محتوای اصلی</a>
+<div id="abHeader"></div>
+
+<main id="main">
+  <div class="ab-container">
+    <nav class="ab-breadcrumb" aria-label="مسیر صفحه">
+      <a href="index.html">خانه</a><span aria-hidden="true">/</span><span>تماس با ما</span>
+    </nav>
+    <div class="ab-pagehead">
+      <h1>تماس با ما</h1>
+      <p>پرسش دربارهٔ یک گیاه، سفارش یا همکاری؟ پیام بگذارید؛ تا یک روز کاری پاسخ می‌دهیم.</p>
+    </div>
+
+    <div class="ab-contact">
+      <form class="ab-panel" id="contactForm" novalidate>
+        <h2 style="font-size:18px">ارسال پیام</h2>
+        <div class="ab-form-grid">
+          <label class="ab-field"><span class="ab-label">نام و نام خانوادگی</span><input class="ab-input" name="name" required autocomplete="name"></label>
+          <label class="ab-field"><span class="ab-label">شمارهٔ تماس</span><input class="ab-input" name="phone" inputmode="tel" required autocomplete="tel" placeholder="۰۹۱۲۱۲۳۴۵۶۷"></label>
+          <label class="ab-field ab-field--full"><span class="ab-label">موضوع</span>
+            <select class="ab-select" name="subject">
+              <option>پرسش دربارهٔ محصول</option><option>پیگیری سفارش</option>
+              <option>مشاورهٔ گیاهی</option><option>همکاری و عمده‌فروشی</option><option>سایر</option>
+            </select></label>
+          <label class="ab-field ab-field--full"><span class="ab-label">پیام</span><textarea class="ab-textarea" name="message" required placeholder="چطور می‌توانیم کمک کنیم؟"></textarea></label>
+        </div>
+        <button class="ab-btn" type="submit">ارسال پیام</button>
+        <p class="ab-xs ab-muted">این فرم نمایشی است و پیام جایی ارسال نمی‌شود.</p>
+      </form>
+
+      <aside class="ab-contact__info">
+        <div class="ab-contact__item"><svg><use href="#i-phone"/></svg><div><b>تلفن</b><br><span dir="ltr">۰۹۱۲ ۱۵۹ ۶۶۸۰</span><br><span dir="ltr">۰۹۳۵ ۸۰۶ ۹۰۹۴</span></div></div>
+        <div class="ab-contact__item"><svg><use href="#i-mail"/></svg><div><b>ایمیل</b><br><span dir="ltr">hello@attarbalad.ir</span></div></div>
+        <div class="ab-contact__item"><svg><use href="#i-pin"/></svg><div><b>نشانی</b><br>فارس، مرودشت، خیابان اصلی، عطاری عطار بلد</div></div>
+        <div class="ab-contact__item"><svg><use href="#i-clock"/></svg><div><b>ساعت پاسخ‌گویی</b><br>شنبه تا پنجشنبه، ۹ تا ۱۹</div></div>
+        <div class="ab-contact__item"><svg><use href="#i-instagram"/></svg><div><b>اینستاگرام</b><br><span dir="ltr">@attarbalad</span></div></div>
+        <div class="ab-alert ab-alert--info">پیش از مصرف گیاه دارویی در بارداری، شیردهی یا همراه با دارو، با پزشک مشورت کنید.</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<div id="abFooter"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>

@@ -1,9 +1,9 @@
-# MASTER PROMPT — ATTAR BALAD
+# MASTER PROMPT – ATTAR BALAD
 
 A build brief for **عطار بلد (Attar Balad)**, a Persian herbal apothecary storefront.
 Paste the section below into any AI builder to reproduce this page; the working
-reference implementation sits beside this file (`index.html`, `styles.css`,
-`main.js`, `assets/courtyard.svg`).
+reference implementation is the Phase 3 storefront beside this file (`index.html`,
+`shop.html`, `product.html`, `assets/css/`, `assets/js/`, `assets/courtyard.svg`).
 
 ---
 
@@ -13,7 +13,7 @@ Build the homepage of **عطار بلد**, a Persian herbal apothecary that sell
 medicinal plants, extracts and oils, spices, infusions and herbal health
 products. The site is **right-to-left, Persian, and feels like a royal Iranian
 herbal house**: warm cream paper, ink black, gold leaf, and a courtyard at dusk.
-It must feel expensive and calm — not like a discount supplement shop — while
+It must feel expensive and calm – not like a discount supplement shop – while
 staying completely scannable, because the buyer is a 30–55 year old Iranian
 woman shopping on a phone who wants to reach a product category in one tap.
 
@@ -57,7 +57,7 @@ tinted background there.
 
 **c. Hero** (full-bleed, min 520–660px tall, RTL two-column grid)
 
-- Background: a warm Persian courtyard at dusk — a sandstone arcade of five
+- Background: a warm Persian courtyard at dusk – a sandstone arcade of five
   arches, the middle one a tall iwan with a lit interior, two dark cypress
   trees, distant blue-grey ranges, and a still life on the foreground ledge
   (books, brass mortar, oil bottle, herb sprigs, saffron threads). A dark scrim
@@ -68,21 +68,21 @@ tinted background there.
   سالم‌تری می‌اندیشیم»; then a gold pill button «مشاهده محصولات» with a leftward
   arrow (forward in RTL) jumping to the categories.
 - Side rail (end side, 232px, hairline borders both sides): four circular icon
-  links stacked, each a ringed icon plus a label — گیاهان دارویی، تاریخ ایران،
-  محصولات ایران، تور مجازی — then a note «سفری در تاریخ، طبیعت و سلامت ایران».
+  links stacked, each a ringed icon plus a label – گیاهان دارویی، تاریخ ایران،
+  محصولات ایران، تور مجازی – then a note «سفری در تاریخ، طبیعت و سلامت ایران».
   On mobile the rail becomes a horizontally scrollable strip of four items.
 
 **d. Services strip** (sand background, five columns, hairline dividers)
 
 Icon in a white rounded square + a bold line + a muted second line:
 
-1. پاسخ خودکار دایرکت اینستاگرام — پاسخ فوری، هر ساعت از شبانه‌روز
-2. پرداخت امن زرین‌پال — درگاه بانکی و کارت‌های شتاب
-3. ارسال سریع — پست، تیپاکس، پیک شهری
-4. چت‌بات پشتیبانی — راهنمای خرید و انتخاب گیاه
-5. پیشنهاد محصول مرتبط — بر پایه سبد خرید شما
+1. پاسخ خودکار دایرکت اینستاگرام – پاسخ فوری، هر ساعت از شبانه‌روز
+2. پرداخت امن زرین‌پال – درگاه بانکی و کارت‌های شتاب
+3. ارسال سریع – پست، تیپاکس، پیک شهری
+4. چت‌بات پشتیبانی – راهنمای خرید و انتخاب گیاه
+5. پیشنهاد محصول مرتبط – بر پایه سبد خرید شما
 
-**e. Categories** — `h2` «دسته‌بندی محصولات», eyebrow «فروشگاه», and a
+**e. Categories** – `h2` «دسته‌بندی محصولات», eyebrow «فروشگاه», and a
 «همه محصولات» link on the other side of a hairline rule. Seven arch-topped tiles
 in one row, each: tinted gradient arch with a line icon, the name, and a small
 count. عصاره‌ها و روغن‌ها (۲۴)، ادویه‌جات (۳۸)، گیاهان دارویی (۵۲)، دمنوش‌ها (۱۹)،
@@ -93,8 +93,8 @@ hover. On mobile: two columns.
 
 Eyebrow «تاریخ طب ایران», `h2` «سفر در تاریخ طب ایران», subtitle «از عهد باستان
 تا امروز», and a ghost pill button «مشاهده در سه‌بعدی» with a cube icon. Below it
-a six-stop timeline of eras — تخت جمشید (۵۵۰ پ.م)، هگمتانه (۷۰۰ پ.م)، ساسانیان
-(۲۲۴ م)، دوره اسلامی (۹۰۰ م)، دوره صفوی (۱۵۰۱ م)، ایران معاصر (۱۳۱۳ ش) — each a
+a six-stop timeline of eras – تخت جمشید (۵۵۰ پ.م)، هگمتانه (۷۰۰ پ.م)، ساسانیان
+(۲۲۴ م)، دوره اسلامی (۹۰۰ م)، دوره صفوی (۱۵۰۱ م)، ایران معاصر (۱۳۱۳ ش) – each a
 gold dot on a hairline that lights up when selected, and a caption under a gold
 left rule that changes with the era:
 
@@ -105,17 +105,17 @@ left rule that changes with the era:
 - دوره صفوی: عطاری‌های بازار صفوی، دارو، ادویه و روغن را کنار هم می‌فروختند.
 - ایران معاصر: دانشکده داروسازی تهران، طب سنتی ایران را به پژوهش دانشگاهی رساند.
 
-**g. Feature trio** — `h2` «بیشتر از یک فروشگاه», three white cards, each an
+**g. Feature trio** – `h2` «بیشتر از یک فروشگاه», three white cards, each an
 icon in a gold-tinted square, a title, a muted line and an outlined pill button:
 
-1. تور مجازی باغ گیاهان دارویی — تجربه‌ای متفاوت از طبیعت — «ورود»
-2. مقالات و آموزش‌ها — دانش طبیعت در زندگی روزمره — «مطالعه کنید»
-3. مشاوره با متخصصان — پرسش‌های خود را مطرح کنید — «شروع مشاوره»
+1. تور مجازی باغ گیاهان دارویی – تجربه‌ای متفاوت از طبیعت – «ورود»
+2. مقالات و آموزش‌ها – دانش طبیعت در زندگی روزمره – «مطالعه کنید»
+3. مشاوره با متخصصان – پرسش‌های خود را مطرح کنید – «شروع مشاوره»
 
-**h. Footer** (ink black, gold top hairline) — brand block with crown and a
+**h. Footer** (ink black, gold top hairline) – brand block with crown and a
 one-line promise, «دسترسی سریع» links, «پشتیبانی» links, and a trust row of
 outlined chips: نماد اعتماد الکترونیکی، زرین‌پال، پرداخت بانکی، تیپاکس، پیک شهری،
-اینستاگرام (with icon). Legal line «© ۱۴۰۴ عطار بلد — تمام حقوق محفوظ است.»
+اینستاگرام (with icon). Legal line «© ۱۴۰۴ عطار بلد – تمام حقوق محفوظ است.»
 
 ### 3. Behaviour
 
@@ -128,7 +128,7 @@ outlined chips: نماد اعتماد الکترونیکی، زرین‌پال،
   product content stays Persian.
 - Smooth anchor scrolling; every card, tile and button has a hover state
   (lift 2–4px, gold border, no bouncy easing).
-- No entrance animations that hide content — the page must be fully legible on
+- No entrance animations that hide content – the page must be fully legible on
   first paint.
 
 ### 4. Rules
@@ -141,7 +141,7 @@ outlined chips: نماد اعتماد الکترونیکی، زرین‌پال،
 - Semantic landmarks (`header`, `main`, `nav`, `footer`, `section` with a
   heading), one `h1`, a skip link, and `prefers-reduced-motion` respected.
 - Static HTML/CSS/vanilla JS, no framework, no build step, no third-party image
-  CDNs — photography comes only from `image-library/` (see “Image standard”
+  CDNs – photography comes only from `image-library/` (see “Image standard”
   below); icons are inline SVG. Only optional remote dependency: the Persian
   webfont, with a Tahoma fallback.
 
@@ -154,10 +154,10 @@ at 360px or 1440px.
 
 ---
 
-## Image standard (fixed rule — applies to every dried-herb product)
+## Image standard (fixed rule – applies to every dried-herb product)
 
 1. Only dried plant matter goes inside a **copper bowl**.
-2. The plant must look **natural, loose and real** — with stems, leaves and dried
+2. The plant must look **natural, loose and real** – with stems, leaves and dried
    flowers. No uniform powder, no decorative styling, no fresh flowers standing
    in for the product.
 3. Each product's look is matched against real samples from the apothecaries
@@ -170,4 +170,5 @@ at 360px or 1440px.
 Files live in `image-library/` (one folder per category, catalogue links in
 `PRODUCT-DATABASE/products.json`); the full checklist is in
 `image-library/IMAGE-STANDARD.md`. The page must only reference images from that
-library.
+library. The optimized WebP copies in `assets/img/` are generated from those same
+masters (no new photography) and are the only versions the page loads.

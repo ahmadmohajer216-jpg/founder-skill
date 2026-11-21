@@ -11,7 +11,7 @@ image-library/
 ├── 05-SEEDS-GRAINS/         بذر و دانه (خاکشیر، کنجد، تخم کتان…)
 ├── 06-DRIED-FRUITS-NUTS/    خشکبار (بادام، پسته، زرشک)
 ├── 07-GUMS-RESINS/          صمغ‌ها و فرآورده‌های طبیعی
-├── PRODUCT-DATABASE/        products.json — فهرست کاتالوگ و اتصال هر محصول به تصویرش
+├── PRODUCT-DATABASE/        products.json – فهرست کاتالوگ و اتصال هر محصول به تصویرش
 ├── LICENSE-RECORDS/         مجوز و منبع هر تصویر
 ├── THUMBNAILS/              تصاویر کوچک و کانتکت‌شیت کاتالوگ
 └── APPROVED-IMAGES/         فقط تصاویری که چک‌لیست استاندارد را پاس کرده‌اند
