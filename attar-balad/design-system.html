@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عطار بلد — دیزاین سیستم (فاز ۲)</title>
+<meta name="description" content="کتابخانهٔ اجزای طراحی عطار بلد: رنگ، تایپوگرافی، فاصله، دکمه، فرم، کارت محصول، سبد، باشگاه مشتریان.">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<style>
+  /* ── چیدمان صفحهٔ مرجع (فقط برای همین صفحه) ─────────────────────────── */
+  .ds-top {
+    position: sticky; top: 0; z-index: 30;
+    background: rgba(247, 243, 232, .92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--ab-line);
+  }
+  .ds-top__inner {
+    display: flex; align-items: center; gap: var(--ab-sp-4);
+    min-height: 60px; flex-wrap: wrap;
+  }
+  .ds-top nav {
+    display: flex; gap: var(--ab-sp-4); overflow-x: auto;
+    font-size: 13px; color: var(--ab-ink-muted); padding-block: 4px;
+  }
+  .ds-top nav a { white-space: nowrap; padding-block: 4px; }
+  .ds-top nav a:hover { color: var(--ab-green); }
+  .ds-ver {
+    margin-inline-start: auto; font-size: 11.5px; color: var(--ab-ink-muted);
+    border: 1px solid var(--ab-line-strong); border-radius: var(--ab-r-pill);
+    padding: 3px 10px;
+  }
+
+  .ds-hero { padding-block: var(--ab-sp-8) var(--ab-sp-6); }
+  .ds-hero h1 { margin-block: var(--ab-sp-3) var(--ab-sp-3); }
+  .ds-hero p { max-width: 68ch; color: var(--ab-ink-muted); }
+  .ds-hero__meta {
+    display: flex; flex-wrap: wrap; gap: var(--ab-sp-2);
+    margin-top: var(--ab-sp-5);
+  }
+  .ds-hero__meta span {
+    font-size: 12px; padding: 6px 12px; border-radius: var(--ab-r-pill);
+    background: var(--ab-white); border: 1px solid var(--ab-line);
+  }
+
+  .ds-section { padding-block: var(--ab-sp-7); border-top: 1px solid var(--ab-line); }
+  .ds-section > .ab-container > h2 { margin-bottom: var(--ab-sp-2); }
+  .ds-lede { color: var(--ab-ink-muted); font-size: 14px; max-width: 70ch; margin-bottom: var(--ab-sp-5); }
+  .ds-note {
+    display: inline-block; margin-top: var(--ab-sp-2);
+    font-size: 12px; color: var(--ab-ink-muted);
+  }
+  .ds-panel {
+    background: var(--ab-white);
+    border: 1px solid var(--ab-line);
+    border-radius: var(--ab-r-lg);
+    padding: var(--ab-sp-5);
+  }
+  .ds-grid { display: grid; gap: var(--ab-sp-4); }
+  .ds-grid--3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .ds-grid--4 { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+  .ds-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ab-sp-3); }
+  .ds-label {
+    font-size: 11.5px; color: var(--ab-ink-muted); font-weight: var(--ab-fw-medium);
+    margin-bottom: var(--ab-sp-2); display: block;
+  }
+  .ds-stack { display: grid; gap: var(--ab-sp-5); }
+
+  /* نمونهٔ رنگ */
+  .ds-swatch { border-radius: var(--ab-r-md); overflow: hidden; border: 1px solid var(--ab-line); background: var(--ab-white); }
+  .ds-swatch__chip { height: 88px; }
+  .ds-swatch__info { padding: 10px 12px; display: grid; gap: 2px; }
+  .ds-swatch__info b { font-size: 13px; }
+  .ds-swatch__info code { font-size: 11px; color: var(--ab-ink-muted); direction: ltr; text-align: right; }
+  .ds-swatch__info small { font-size: 11px; color: var(--ab-ink-muted); }
+
+  /* نمونهٔ تایپ */
+  .ds-type-row {
+    display: grid; gap: var(--ab-sp-2);
+    padding-block: var(--ab-sp-4);
+    border-bottom: 1px dashed var(--ab-line);
+  }
+  .ds-type-row:last-child { border-bottom: 0; }
+  .ds-type-row__meta { font-size: 11px; color: var(--ab-ink-muted); direction: ltr; text-align: right; }
+
+  /* مقیاس فاصله */
+  .ds-space { display: grid; gap: 6px; }
+  .ds-space__bar { height: 12px; background: var(--ab-green-soft); border-radius: 2px; }
+
+  /* سطح و سایه */
+  .ds-elev { height: 88px; border-radius: var(--ab-r-md); background: var(--ab-white); display: grid; place-items: center; font-size: 11.5px; color: var(--ab-ink-muted); }
+
+  /* هدر نمونه */
+  .ds-demo { border: 1px solid var(--ab-line); border-radius: var(--ab-r-lg); overflow: hidden; background: var(--ab-cream); }
+  .ds-demo__phone { max-width: 390px; margin-inline: auto; background: var(--ab-cream); }
+  .ds-demo__caption { font-size: 11.5px; color: var(--ab-ink-muted); padding: 8px 12px; border-top: 1px dashed var(--ab-line); }
+
+  .ds-check { display: grid; gap: 6px; font-size: 13px; color: var(--ab-ink-muted); }
+  .ds-check b { color: var(--ab-ink); font-weight: var(--ab-fw-semibold); }
+
+  .ds-foot { padding-block: var(--ab-sp-6); border-top: 1px solid var(--ab-line); color: var(--ab-ink-muted); font-size: 13px; }
+</style>
+</head>
+<body class="ab-body">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.4"/><path d="m16 16 4 4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.2" r="3.6"/><path d="M5.2 20c0-3.5 3-5.6 6.8-5.6s6.8 2.1 6.8 5.6"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3.6 4.6h2.2l2.3 9.6h9.5l2.1-7.2H6.6"/><circle cx="9.6" cy="18.6" r="1.4"/><circle cx="17" cy="18.6" r="1.4"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.2S3.8 15.4 3.8 9.6A4.4 4.4 0 0 1 12 7.1a4.4 4.4 0 0 1 8.2 2.5c0 5.8-8.2 10.6-8.2 10.6z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.4 12 4l8 6.4V20h-5.6v-5.4h-4.8V20H4z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.6" height="6.6" rx="1.4"/><rect x="13.4" y="4" width="6.6" height="6.6" rx="1.4"/><rect x="4" y="13.4" width="6.6" height="6.6" rx="1.4"/><rect x="13.4" y="13.4" width="6.6" height="6.6" rx="1.4"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4c.4 9.4-5.2 13.4-11 13.4H4.6C4.2 8.9 9.8 4 20 4z"/><path d="M4.8 19.6c2.8-4.8 6-7.8 10.4-10"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.6 4.4 4.4L19 7.4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+</svg>
+
+<header class="ds-top">
+  <div class="ab-container ds-top__inner">
+    <a class="ab-logo" href="index.html">عطار بلد <span>دیزاین سیستم</span></a>
+    <nav aria-label="بخش‌های دیزاین سیستم">
+      <a href="#colors">رنگ</a>
+      <a href="#type">تایپوگرافی</a>
+      <a href="#space">فاصله و شکل</a>
+      <a href="#buttons">دکمه</a>
+      <a href="#forms">فرم</a>
+      <a href="#badges">نشان</a>
+      <a href="#product">کارت محصول</a>
+      <a href="#chrome">هدر و سبد</a>
+      <a href="#club">باشگاه</a>
+      <a href="#messages">پیام</a>
+      <a href="#a11y">دسترس‌پذیری</a>
+    </nav>
+    <span class="ds-ver">v1.0 · فاز ۲</span>
+  </div>
+</header>
+
+<main>
+  <section class="ab-container ds-hero">
+    <span class="ab-eyebrow">فاز ۲ — دیزاین سیستم</span>
+    <h1>زبان طراحی عطار بلد</h1>
+    <p>
+      این صفحه مرجع یکتای رنگ، تایپوگرافی، فاصله و اجزای فروشگاه است. هر صفحهٔ بعدی
+      (خانه، فروشگاه، محصول، سبد، حساب، باشگاه، مجله) فقط از همین توکن‌ها و کلاس‌ها ساخته
+      می‌شود؛ مقدار خام رنگ یا اندازه در جای دیگری نوشته نمی‌شود.
+    </p>
+    <div class="ds-hero__meta">
+      <span>توکن‌ها: <code dir="ltr">assets/css/tokens.css</code></span>
+      <span>اجزا: <code dir="ltr">assets/css/components.css</code></span>
+      <span>فونت‌ها: self-host، woff2</span>
+      <span>اعداد: فارسی در رابط</span>
+      <span>دادهٔ قیمت این صفحه نمونه است</span>
+    </div>
+  </section>
+
+  <!-- ── رنگ ───────────────────────────────────────────────────────────── -->
+  <section class="ds-section" id="colors">
+    <div class="ab-container">
+      <h2>۰۱ — رنگ</h2>
+      <p class="ds-lede">
+        شش رنگ پایه. طلایی هرگز به‌عنوان رنگ متن روی کرم یا سفید استفاده نمی‌شود؛ فقط سطح،
+        نشان و خط تزئینی است.
+      </p>
+      <div class="ds-grid ds-grid--3">
+        <article class="ds-swatch">
+          <div class="ds-swatch__chip" style="background: var(--ab-green)"></div>
+          <div class="ds-swatch__info">
+            <b>سبز جنگلی — اصلی</b><code>#14532D · --ab-green</code>
+            <small>دکمهٔ اصلی، هدر، لینک فعال · متن سفید روی آن ۹٫۴:۱</small>
+          </div>
+        </article>
+        <article class="ds-swatch">
+          <div class="ds-swatch__chip" style="background: var(--ab-green-soft)"></div>
+          <div class="ds-swatch__info">
+            <b>سبز مریم‌گلی — مکمل</b><code>#A3CFA5 · --ab-green-soft</code>
+            <small>نشان ارگانیک، سطح ملایم · متن سبز تیره روی آن ۷٫۶:۱</small>
+          </div>
+        </article>
+        <article class="ds-swatch">
+          <div class="ds-swatch__chip" style="background: var(--ab-cream)"></div>
+          <div class="ds-swatch__info">
+            <b>کرم گرم — پس‌زمینه</b><code>#F7F3E8 · --ab-cream</code>
+            <small>پس‌زمینهٔ صفحه · متن ذغالی روی آن ۱۲٫۶:۱</small>
+          </div>
+        </article>
+        <article class="ds-swatch">
+          <div class="ds-swatch__chip" style="background: var(--ab-gold)"></div>
+          <div class="ds-swatch__info">
+            <b>طلایی مات — تأکید</b><code>#C5A45B · --ab-gold</code>
+            <small>قیمت ویژه، نشان باشگاه · متن ذغالی روی آن ۶٫۱:۱</small>
+          </div>
+        </article>
+        <article class="ds-swatch">
+          <div class="ds-swatch__chip" style="background: var(--ab-ink)"></div>
+          <div class="ds-swatch__info">
+            <b>ذغالی — متن</b><code>#292D27 · --ab-ink</code>
+            <small>متن اصلی · روی کرم ۱۲٫۶:۱</small>
+          </div>
+        </article>
+        <article class="ds-swatch">
+          <div class="ds-swatch__chip" style="background: var(--ab-white); border-bottom: 1px solid var(--ab-line)"></div>
+          <div class="ds-swatch__info">
+            <b>سفید خالص — سطح</b><code>#FFFFFF · --ab-white</code>
+            <small>کارت، فرم، هدر · با خط ۱px از کرم جدا می‌شود</small>
+          </div>
+        </article>
+      </div>
+      <p class="ds-note">
+        رنگ‌های وضعیت از همان پالت مشتق شده‌اند: موفقیت <code dir="ltr">#EDF3EA</code>،
+        هشدار <code dir="ltr">#F3EAD5</code>، خطا <code dir="ltr">#8C2F27</code>.
+        متن ثانویه <code dir="ltr">#5B6156</code> (کنتراست ۵٫۵:۱).
+      </p>
+    </div>
+  </section>
+
+  <!-- ── تایپوگرافی ────────────────────────────────────────────────────── -->
+  <section class="ds-section" id="type">
+    <div class="ab-container">
+      <h2>۰۲ — تایپوگرافی</h2>
+      <p class="ds-lede">
+        تیترها Estedad، متن Vazirmatn. هر دو self-host شده‌اند تا سرعت و یکنواختی نمایش
+        مستقل از شبکه باشد. ارتفاع خط متن ۱٫۸ برای خوانایی فارسی.
+      </p>
+      <div class="ds-panel">
+        <div class="ds-type-row">
+          <span class="ds-label">H1 — Estedad 700 · 44px</span>
+          <span style="font-family: var(--ab-font-head); font-weight: 700; font-size: var(--ab-fs-3xl); line-height: 1.3;">گیاهان دارویی، با دانش و اصالت</span>
+          <span class="ds-type-row__meta">--ab-fs-3xl / --ab-font-head / 700</span>
+        </div>
+        <div class="ds-type-row">
+          <span class="ds-label">H2 — Estedad 700 · 32px</span>
+          <span style="font-family: var(--ab-font-head); font-weight: 700; font-size: var(--ab-fs-2xl); line-height: 1.35;">پرفروش‌ترین محصولات این فصل</span>
+          <span class="ds-type-row__meta">--ab-fs-2xl / --ab-font-head / 700</span>
+        </div>
+        <div class="ds-type-row">
+          <span class="ds-label">H3 — Estedad 600 · 20px</span>
+          <span style="font-family: var(--ab-font-head); font-weight: 600; font-size: var(--ab-fs-lg);">زعفران قائنات، نگین سرخ خراسان</span>
+          <span class="ds-type-row__meta">--ab-fs-lg / --ab-font-head / 600</span>
+        </div>
+        <div class="ds-type-row">
+          <span class="ds-label">متن — Vazirmatn 400 · 16px / 1.8</span>
+          <p style="max-width: 62ch;">
+            عطار بلد محصولات گیاهی را با شناسنامهٔ کامل، منبع مشخص و بسته‌بندی محافظ ارائه
+            می‌کند. اطلاعات هر محصول برای آگاهی و انتخاب آگاهانه است، نه جایگزین توصیهٔ
+            پزشک یا داروساز.
+          </p>
+          <span class="ds-type-row__meta">--ab-fs-base / --ab-font-body / 400</span>
+        </div>
+        <div class="ds-type-row">
+          <span class="ds-label">متن ثانویه — Vazirmatn 400 · 13px</span>
+          <p style="font-size: var(--ab-fs-sm); color: var(--ab-ink-muted);">
+            ارسال از انبار تهران · بسته‌بندی محافظ · بازگشت تا ۷ روز
+          </p>
+          <span class="ds-type-row__meta">--ab-fs-sm / --ab-ink-muted</span>
+        </div>
+        <div class="ds-type-row">
+          <span class="ds-label">اعداد فارسی و لاتین</span>
+          <p>۱۲٬۴۵۰ تومان · ۵۰۰ گرم · ۴٫۸ از ۵ · کد سفارش AB-۱۴۰۳۲</p>
+          <span class="ds-type-row__meta">ارقام فارسی در رابط؛ SKU و کد فنی لاتین</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── فاصله و شکل ───────────────────────────────────────────────────── -->
+  <section class="ds-section" id="space">
+    <div class="ab-container">
+      <h2>۰۳ — فاصله، شعاع و سایه</h2>
+      <p class="ds-lede">مقیاس ۴ پیکسلی؛ هر فاصله یکی از این پله‌هاست.</p>
+      <div class="ds-grid ds-grid--3">
+        <div class="ds-panel">
+          <span class="ds-label">مقیاس فاصله</span>
+          <div class="ds-stack" style="gap: var(--ab-sp-3)">
+            <div class="ds-space"><span class="ds-type-row__meta">4</span><div class="ds-space__bar" style="width: 4px"></div></div>
+            <div class="ds-space"><span class="ds-type-row__meta">8</span><div class="ds-space__bar" style="width: 8px"></div></div>
+            <div class="ds-space"><span class="ds-type-row__meta">16</span><div class="ds-space__bar" style="width: 16px"></div></div>
+            <div class="ds-space"><span class="ds-type-row__meta">24</span><div class="ds-space__bar" style="width: 24px"></div></div>
+            <div class="ds-space"><span class="ds-type-row__meta">32</span><div class="ds-space__bar" style="width: 32px"></div></div>
+            <div class="ds-space"><span class="ds-type-row__meta">48</span><div class="ds-space__bar" style="width: 48px"></div></div>
+            <div class="ds-space"><span class="ds-type-row__meta">64</span><div class="ds-space__bar" style="width: 64px"></div></div>
+            <div class="ds-space"><span class="ds-type-row__meta">96</span><div class="ds-space__bar" style="width: 96px"></div></div>
+          </div>
+        </div>
+        <div class="ds-panel">
+          <span class="ds-label">شعاع گوشه</span>
+          <div class="ds-row" style="gap: var(--ab-sp-4); align-items: flex-end;">
+            <div style="width: 64px; height: 64px; background: var(--ab-cream-deep); border: 1px solid var(--ab-line); border-radius: var(--ab-r-sm)"></div>
+            <div style="width: 64px; height: 64px; background: var(--ab-cream-deep); border: 1px solid var(--ab-line); border-radius: var(--ab-r-md)"></div>
+            <div style="width: 64px; height: 64px; background: var(--ab-cream-deep); border: 1px solid var(--ab-line); border-radius: var(--ab-r-lg)"></div>
+            <div style="width: 64px; height: 64px; background: var(--ab-cream-deep); border: 1px solid var(--ab-line); border-radius: var(--ab-r-xl)"></div>
+            <div style="width: 64px; height: 44px; background: var(--ab-cream-deep); border: 1px solid var(--ab-line); border-radius: var(--ab-r-pill)"></div>
+          </div>
+          <p class="ds-note" style="margin-top: var(--ab-sp-4)">
+            فرم و کارت ۱۲–۱۶ · بنر و کارت ویژه ۲۴ · دکمه و چیپ pill
+          </p>
+        </div>
+        <div class="ds-panel">
+          <span class="ds-label">سایه</span>
+          <div class="ds-grid" style="grid-template-columns: 1fr 1fr; gap: var(--ab-sp-3)">
+            <div class="ds-elev" style="box-shadow: var(--ab-shadow-xs)">xs</div>
+            <div class="ds-elev" style="box-shadow: var(--ab-shadow-sm)">sm</div>
+            <div class="ds-elev" style="box-shadow: var(--ab-shadow-md)">md</div>
+            <div class="ds-elev" style="box-shadow: var(--ab-shadow-lg)">lg</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── دکمه ──────────────────────────────────────────────────────────── -->
+  <section class="ds-section" id="buttons">
+    <div class="ab-container">
+      <h2>۰۴ — دکمه</h2>
+      <p class="ds-lede">
+        چهار گونه، سه اندازه و چهار حالت. هیچ دکمه‌ای بدون عملکرد در صفحه قرار نمی‌گیرد؛
+        دکمهٔ غیرفعال همیشه دلیلش را کنار خود دارد.
+      </p>
+      <div class="ds-panel ds-stack">
+        <div>
+          <span class="ds-label">گونه‌ها</span>
+          <div class="ds-row">
+            <button class="ab-btn" type="button">افزودن به سبد خرید</button>
+            <button class="ab-btn ab-btn--gold" type="button">ثبت سفارش</button>
+            <button class="ab-btn ab-btn--outline" type="button">مشاهدهٔ محصول</button>
+            <button class="ab-btn ab-btn--ghost" type="button">ادامهٔ خرید</button>
+            <button class="ab-btn ab-btn--icon" type="button" aria-label="افزودن به علاقه‌مندی‌ها">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg>
+            </button>
+          </div>
+        </div>
+        <div>
+          <span class="ds-label">اندازه‌ها</span>
+          <div class="ds-row" style="align-items: flex-end;">
+            <button class="ab-btn ab-btn--sm" type="button">کوچک</button>
+            <button class="ab-btn" type="button">متوسط (پیش‌فرض)</button>
+            <button class="ab-btn ab-btn--lg" type="button">بزرگ</button>
+          </div>
+        </div>
+        <div>
+          <span class="ds-label">حالت‌ها</span>
+          <div class="ds-row">
+            <button class="ab-btn" type="button">پیش‌فرض</button>
+            <button class="ab-btn is-loading" type="button" aria-busy="true">در حال ثبت</button>
+            <button class="ab-btn" type="button" disabled>ناموجود</button>
+            <button class="ab-btn ab-btn--outline" type="button" disabled>افزودن به سبد</button>
+          </div>
+        </div>
+        <div>
+          <span class="ds-label">تمام‌عرض (موبایل)</span>
+          <button class="ab-btn ab-btn--block" type="button">تکمیل خرید و پرداخت</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── فرم ───────────────────────────────────────────────────────────── -->
+  <section class="ds-section" id="forms">
+    <div class="ab-container">
+      <h2>۰۵ — فرم</h2>
+      <p class="ds-lede">
+        برچسب همیشه دیده می‌شود، خطا زیر همان فیلد و با متن روشن، فیلد اجباری علامت‌دار.
+        شمارهٔ موبایل با صفحه‌کلید عددی و الگوی ۰۹.
+      </p>
+      <div class="ds-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="ds-panel ds-stack">
+          <div class="ab-field">
+            <label class="ab-label" for="ds-name">نام و نام خانوادگی</label>
+            <input class="ab-input" id="ds-name" type="text" value="مریم احمدی" autocomplete="name">
+          </div>
+          <div class="ab-field">
+            <label class="ab-label" for="ds-phone">شمارهٔ موبایل <span>(برای پیگیری سفارش)</span></label>
+            <input class="ab-input" id="ds-phone" type="tel" inputmode="numeric" placeholder="۰۹۱۲۳۴۵۶۷۸۹" dir="ltr" style="text-align: right">
+            <span class="ab-hint">کد تأیید سفارش به همین شماره پیامک می‌شود.</span>
+          </div>
+          <div class="ab-field">
+            <label class="ab-label" for="ds-city">شهر</label>
+            <select class="ab-select" id="ds-city">
+              <option>تهران</option>
+              <option>اصفهان</option>
+              <option>مشهد</option>
+            </select>
+          </div>
+          <div class="ab-field">
+            <label class="ab-label" for="ds-note">یادداشت سفارش <span>(اختیاری)</span></label>
+            <textarea class="ab-textarea" id="ds-note" placeholder="مثلاً: بسته‌بندی کادویی"></textarea>
+          </div>
+          <div class="ab-field">
+            <label class="ab-label" for="ds-code">کد تخفیف</label>
+            <input class="ab-input" id="ds-code" type="text" value="AB1403" aria-invalid="true" aria-describedby="ds-code-err" dir="ltr" style="text-align: right">
+            <span class="ab-error" id="ds-code-err">این کد منقضی شده است. کد دیگری امتحان کنید.</span>
+          </div>
+          <div class="ab-field">
+            <label class="ab-label" for="ds-dis">فیلد غیرفعال</label>
+            <input class="ab-input" id="ds-dis" type="text" value="کد پستی پس از انتخاب شهر" disabled>
+          </div>
+        </div>
+        <div class="ds-panel ds-stack">
+          <div>
+            <span class="ds-label">چک‌باکس و رادیو</span>
+            <div class="ds-stack" style="gap: var(--ab-sp-3)">
+              <label class="ab-choice"><input type="checkbox" checked> قوانین فروشگاه را می‌پذیرم</label>
+              <label class="ab-choice"><input type="checkbox"> خبرنامهٔ ماهانهٔ عطار بلد را دریافت می‌کنم</label>
+              <label class="ab-choice"><input type="radio" name="ds-ship" checked> ارسال عادی — ۳ تا ۵ روز کاری</label>
+              <label class="ab-choice"><input type="radio" name="ds-ship"> ارسال سریع — ۲۴ ساعته</label>
+            </div>
+          </div>
+          <div>
+            <span class="ds-label">سوییچ</span>
+            <div class="ds-stack" style="gap: var(--ab-sp-3)">
+              <label class="ab-switch"><input type="checkbox" checked> یادآوری خرید ماهانه</label>
+              <label class="ab-switch"><input type="checkbox"> دریافت پیامک تخفیف‌ها</label>
+            </div>
+          </div>
+          <div>
+            <span class="ds-label">تعداد</span>
+            <div class="ab-qty">
+              <button type="button" aria-label="کاهش تعداد">−</button>
+              <input type="number" value="2" min="1" max="10" aria-label="تعداد">
+              <button type="button" aria-label="افزایش تعداد">+</button>
+            </div>
+          </div>
+          <div>
+            <span class="ds-label">جست‌وجوی فشرده</span>
+            <div class="ab-search" style="max-width: none; margin: 0;">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-search"/></svg>
+              <span>جست‌وجو در محصولات…</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── نشان و چیپ ────────────────────────────────────────────────────── -->
+  <section class="ds-section" id="badges">
+    <div class="ab-container">
+      <h2>۰۶ — نشان، برچسب و چیپ فیلتر</h2>
+      <p class="ds-lede">نشان‌ها کوتاه و بدون جمله؛ چیپ فیلتر وضعیت فعال خود را واضح نشان می‌دهد.</p>
+      <div class="ds-grid ds-grid--3">
+        <div class="ds-panel">
+          <span class="ds-label">نشان</span>
+          <div class="ds-row">
+            <span class="ab-badge ab-badge--sale">۲۵٪ تخفیف</span>
+            <span class="ab-badge ab-badge--new">جدید</span>
+            <span class="ab-badge ab-badge--organic">ارگانیک</span>
+            <span class="ab-badge ab-badge--out">ناموجود</span>
+            <span class="ab-badge ab-badge--muted">به‌زودی</span>
+          </div>
+        </div>
+        <div class="ds-panel">
+          <span class="ds-label">چیپ فیلتر</span>
+          <div class="ds-row">
+            <button class="ab-chip is-active" type="button">گیاهان دارویی</button>
+            <button class="ab-chip" type="button">دمنوش</button>
+            <button class="ab-chip" type="button">ادویه</button>
+          </div>
+        </div>
+        <div class="ds-panel">
+          <span class="ds-label">مراحل سفارش</span>
+          <div class="ab-steps">
+            <span class="ab-step is-done"><span class="ab-step__dot">✓</span> سبد</span>
+            <span class="ab-step__line"></span>
+            <span class="ab-step is-active"><span class="ab-step__dot">۲</span> آدرس</span>
+            <span class="ab-step__line"></span>
+            <span class="ab-step"><span class="ab-step__dot">۳</span> پرداخت</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── کارت محصول ────────────────────────────────────────────────────── -->
+  <section class="ds-section" id="product">
+    <div class="ab-container">
+      <div class="ab-section-head">
+        <div>
+          <span class="ab-eyebrow">کارت محصول</span>
+          <h2 style="margin-top: var(--ab-sp-2)">۰۷ — سه حالت کارت</h2>
+          <p>تخفیف‌دار، عادی و ناموجود. تصویر ۱:۱، بزرگ‌نمایی ملایم فقط روی هاور.</p>
+        </div>
+      </div>
+      <div class="ds-grid ds-grid--3">
+        <article class="ab-card">
+          <div class="ab-card__media">
+            <img src="image-library/02-SPICES/product-saffron.png" alt="زعفران قائنات در ظرف مسی" width="600" height="600" loading="lazy">
+            <div class="ab-card__badges"><span class="ab-badge ab-badge--sale">۲۵٪ تخفیف</span></div>
+            <button class="ab-card__fav" type="button" aria-label="افزودن زعفران قائنات به علاقه‌مندی‌ها">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-heart"/></svg>
+            </button>
+          </div>
+          <div class="ab-card__body">
+            <span class="ab-card__cat">ادویه‌جات</span>
+            <h3 class="ab-card__title">زعفران قائنات — سرگل</h3>
+            <span class="ab-card__meta">۱ گرم · شیشهٔ درب‌دار</span>
+            <div class="ab-card__foot">
+              <div class="ab-price">
+                <span class="ab-price__now">۲۸۵٬۰۰۰</span>
+                <span class="ab-price__old">۳۸۰٬۰۰۰</span>
+                <span class="ab-price__unit">تومان</span>
+              </div>
+              <button class="ab-btn ab-btn--sm" type="button">افزودن</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ab-card">
+          <div class="ab-card__media">
+            <img src="image-library/01-MEDICINAL-HERBS/product-thyme.jpg" alt="آویشن خشک در کاسهٔ مسی" width="600" height="600" loading="lazy">
+            <div class="ab-card__badges"><span class="ab-badge ab-badge--organic">ارگانیک</span></div>
+            <button class="ab-card__fav" type="button" aria-label="افزودن آویشن به علاقه‌مندی‌ها">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-heart"/></svg>
+            </button>
+          </div>
+          <div class="ab-card__body">
+            <span class="ab-card__cat">گیاهان دارویی</span>
+            <h3 class="ab-card__title">آویشن شیرازی</h3>
+            <span class="ab-card__meta">۱۰۰ گرم · کیسهٔ محافظ</span>
+            <div class="ab-card__foot">
+              <div class="ab-price">
+                <span class="ab-price__now">۱۴۸٬۰۰۰</span>
+                <span class="ab-price__unit">تومان</span>
+              </div>
+              <button class="ab-btn ab-btn--sm" type="button">افزودن</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ab-card">
+          <div class="ab-card__media">
+            <img src="image-library/01-MEDICINAL-HERBS/product-lavender.jpg" alt="اسطوخودوس خشک در ظرف مسی" width="600" height="600" loading="lazy" style="opacity: .6">
+            <div class="ab-card__badges"><span class="ab-badge ab-badge--out">ناموجود</span></div>
+            <button class="ab-card__fav" type="button" aria-label="افزودن اسطوخودوس به علاقه‌مندی‌ها">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-heart"/></svg>
+            </button>
+          </div>
+          <div class="ab-card__body">
+            <span class="ab-card__cat">گیاهان دارویی</span>
+            <h3 class="ab-card__title">اسطوخودوس کاشان</h3>
+            <span class="ab-card__meta">۵۰ گرم · کیسهٔ محافظ</span>
+            <div class="ab-card__foot">
+              <div class="ab-price">
+                <span class="ab-price__now" style="color: var(--ab-ink-muted)">۱۹۵٬۰۰۰</span>
+                <span class="ab-price__unit">تومان</span>
+              </div>
+              <button class="ab-btn ab-btn--sm ab-btn--outline" type="button" disabled>اطلاع از موجودی</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="ds-note">قیمت‌ها نمونه‌اند و از کاتالوگ واقعی خوانده نمی‌شوند؛ در فاز ۵ از ووکامرس می‌آیند.</p>
+    </div>
+  </section>
+
+  <!-- ── هدر، ناوبری، سبد ──────────────────────────────────────────────── -->
+  <section class="ds-section" id="chrome">
+    <div class="ab-container">
+      <h2>۰۸ — هدر، ناوبری و سبد</h2>
+      <p class="ds-lede">هدر دسکتاپ سه‌بخشی؛ هدر موبایل فشرده با نوار پایین پنج‌گانه.</p>
+
+      <div class="ds-demo" style="margin-bottom: var(--ab-sp-5)">
+        <div class="ab-header">
+          <div class="ab-container ab-header__inner">
+            <a class="ab-logo" href="#">عطار بلد <span>عطاری اصیل</span></a>
+            <nav class="ab-nav" aria-label="منوی اصلی">
+              <a href="#" class="is-active">خانه</a>
+              <a href="#">فروشگاه</a>
+              <a href="#">دمنوش</a>
+              <a href="#">عرقیات</a>
+              <a href="#">مجله</a>
+            </nav>
+            <div class="ab-search">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-search"/></svg>
+              <span>جست‌وجوی گیاه، ادویه، عرق…</span>
+            </div>
+            <div class="ab-header__actions">
+              <button class="ab-icon-btn" type="button" aria-label="حساب کاربری">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-user"/></svg>
+              </button>
+              <button class="ab-icon-btn" type="button" aria-label="سبد خرید، ۲ قلم">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-cart"/></svg>
+                <span class="ab-icon-btn__count">۲</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <p class="ds-demo__caption">هدر دسکتاپ — جست‌وجو در میانه، سبد با شمارندهٔ طلایی</p>
+      </div>
+
+      <div class="ds-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <div class="ds-demo ds-demo__phone">
+          <div class="ab-header">
+            <div class="ab-header__inner" style="min-height: 58px; padding-inline: 16px; gap: 8px;">
+              <button class="ab-icon-btn" type="button" aria-label="منو">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-menu"/></svg>
+              </button>
+              <a class="ab-logo" href="#" style="font-size: 19px;">عطار بلد</a>
+              <div class="ab-header__actions" style="margin-inline-start: auto;">
+                <button class="ab-icon-btn" type="button" aria-label="جست‌وجو">
+                  <svg width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-search"/></svg>
+                </button>
+                <button class="ab-icon-btn" type="button" aria-label="سبد خرید، ۲ قلم">
+                  <svg width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-cart"/></svg>
+                  <span class="ab-icon-btn__count">۲</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div style="height: 120px; background: var(--ab-cream-deep); display: grid; place-items: center; color: var(--ab-ink-muted); font-size: 12px;">محتوای صفحه</div>
+          <nav class="ab-bottomnav" aria-label="ناوبری پایین">
+            <a href="#" class="is-active"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-home"/></svg>خانه</a>
+            <a href="#"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-grid"/></svg>دسته‌بندی</a>
+            <a href="#"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-leaf"/></svg>فروشگاه</a>
+            <a href="#"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-heart"/></svg>علاقه‌مندی</a>
+            <a href="#"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-user"/></svg>حساب</a>
+          </nav>
+          <p class="ds-demo__caption">هدر موبایل + نوار ناوبری پایین</p>
+        </div>
+
+        <div class="ds-demo" style="display: grid; place-items: center; padding: var(--ab-sp-5); background: var(--ab-cream-deep);">
+          <div class="ab-drawer">
+            <div class="ab-drawer__head">
+              <strong style="font-family: var(--ab-font-head); font-size: 17px;">سبد خرید (۲)</strong>
+              <button class="ab-icon-btn" type="button" aria-label="بستن سبد">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><use href="#i-x"/></svg>
+              </button>
+            </div>
+            <div class="ab-drawer__body">
+              <div class="ab-line-item">
+                <img src="image-library/02-SPICES/product-saffron.png" alt="" width="64" height="64" loading="lazy">
+                <div class="ab-line-item__info">
+                  <span class="ab-line-item__name">زعفران قائنات</span>
+                  <span class="ab-line-item__meta">۱ گرم × ۱</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 600;">۲۸۵٬۰۰۰</span>
+              </div>
+              <div class="ab-line-item">
+                <img src="image-library/01-MEDICINAL-HERBS/product-thyme.jpg" alt="" width="64" height="64" loading="lazy">
+                <div class="ab-line-item__info">
+                  <span class="ab-line-item__name">آویشن شیرازی</span>
+                  <span class="ab-line-item__meta">۱۰۰ گرم × ۲</span>
+                </div>
+                <span style="font-size: 13px; font-weight: 600;">۲۹۶٬۰۰۰</span>
+              </div>
+            </div>
+            <div class="ab-drawer__foot">
+              <div class="ab-total"><span style="font-size: 13px; color: var(--ab-ink-muted);">جمع سبد</span><strong>۵۸۱٬۰۰۰ تومان</strong></div>
+              <button class="ab-btn ab-btn--block" type="button">تسویه‌حساب</button>
+              <button class="ab-btn ab-btn--ghost ab-btn--block ab-btn--sm" type="button">ادامهٔ خرید</button>
+            </div>
+          </div>
+          <p class="ds-demo__caption">سبد کشویی — پیش‌نمایش ثابت</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── باشگاه ────────────────────────────────────────────────────────── -->
+  <section class="ds-section" id="club">
+    <div class="ab-container">
+      <h2>۰۹ — باشگاه مشتریان</h2>
+      <p class="ds-lede">کارت عضویت با سطح، امتیاز و شمارهٔ عضویت؛ سطح با طلایی مات مشخص می‌شود.</p>
+      <div class="ds-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="ab-tier">
+          <div class="ab-tier__top">
+            <div>
+              <div class="ab-tier__brand">عطار بلد</div>
+              <div class="ab-tier__name">کارت عضویت باشگاه</div>
+            </div>
+            <span class="ab-tier__rank">طلایی · Gold</span>
+          </div>
+          <div>
+            <div class="ab-tier__points"><strong>۲٬۴۵۰</strong><span>امتیاز</span></div>
+          </div>
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: var(--ab-sp-3);">
+            <span class="ab-tier__num" dir="ltr">AB-۱۴۰۳۲-۰۷</span>
+            <span style="font-size: 11.5px; color: var(--ab-green-soft);">تا سطح VIP: ۲٬۵۵۰ امتیاز</span>
+          </div>
+        </div>
+        <div class="ds-panel ds-stack">
+          <span class="ds-label">سطوح</span>
+          <div class="ds-row">
+            <span class="ab-badge ab-badge--muted">Bronze · ۰</span>
+            <span class="ab-badge ab-badge--muted">Silver · ۵۰۰</span>
+            <span class="ab-badge ab-badge--sale">Gold · ۲٬۰۰۰</span>
+            <span class="ab-badge ab-badge--new">VIP · ۵٬۰۰۰</span>
+          </div>
+          <p style="font-size: 13px; color: var(--ab-ink-muted);">
+            اعداد امتیاز مرز سطوح‌اند و تا تأیید نهایی شما نمونه‌اند.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── پیام‌ها ───────────────────────────────────────────────────────── -->
+  <section class="ds-section" id="messages">
+    <div class="ab-container">
+      <h2>۱۰ — پیام، توست و حالت خالی</h2>
+      <p class="ds-lede">پیام موفقیت همیشه می‌گوید چه اتفاقی افتاد و قدم بعدی چیست.</p>
+      <div class="ds-grid ds-grid--3">
+        <div class="ds-panel ds-stack">
+          <div class="ab-alert ab-alert--success">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="margin-top: 4px; flex: none;"><use href="#i-check"/></svg>
+            <span>کد تخفیف اعمال شد؛ ۳۸٬۰۰۰ تومان از مبلغ سبد کم شد.</span>
+          </div>
+          <div class="ab-alert ab-alert--info">
+            <span>ارسال رایگان برای سفارش‌های بالای ۵۰۰٬۰۰۰ تومان.</span>
+          </div>
+          <div class="ab-alert ab-alert--error">
+            <span>پرداخت ناموفق بود. مبلغی از حساب شما کسر نشده است.</span>
+          </div>
+        </div>
+        <div class="ds-panel ds-stack">
+          <span class="ds-label">توست</span>
+          <div class="ab-toast">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="color: var(--ab-green)"><use href="#i-check"/></svg>
+            <span>آویشن شیرازی به سبد اضافه شد.</span>
+          </div>
+          <div class="ab-toast ab-toast--error">
+            <span>این محصول در انبار موجود نیست.</span>
+          </div>
+        </div>
+        <div class="ab-empty">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><use href="#i-heart"/></svg>
+          <strong>هنوز محصولی به علاقه‌مندی‌ها اضافه نکرده‌اید</strong>
+          <span style="font-size: 13px;">با زدن آیکن قلب روی هر محصول، آن را اینجا نگه دارید.</span>
+          <button class="ab-btn ab-btn--outline ab-btn--sm" type="button">مشاهدهٔ فروشگاه</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── دسترس‌پذیری ───────────────────────────────────────────────────── -->
+  <section class="ds-section" id="a11y">
+    <div class="ab-container">
+      <h2>۱۱ — دسترس‌پذیری و حرکت</h2>
+      <p class="ds-lede">قواعدی که در همهٔ صفحات بعدی رعایت می‌شود.</p>
+      <div class="ds-grid ds-grid--3">
+        <div class="ds-panel ds-check">
+          <b>کنتراست</b>
+          <span>متن اصلی ۱۲٫۶:۱، متن ثانویه ۵٫۵:۱، متن روی سبز ۹٫۴:۱ — همه بالاتر از AA.</span>
+        </div>
+        <div class="ds-panel ds-check">
+          <b>فوکوس</b>
+          <span>حلقهٔ ۲px سبز با فاصلهٔ ۳px روی همهٔ کنترل‌ها؛ با Tab قابل مشاهده.</span>
+          <button class="ab-btn ab-btn--outline ab-btn--sm" type="button" style="margin-top: var(--ab-sp-2)">با Tab به من برسید</button>
+        </div>
+        <div class="ds-panel ds-check">
+          <b>حرکت</b>
+          <span>۱۸۰–۲۴۰ms با ease-out؛ با <code dir="ltr">prefers-reduced-motion</code> همهٔ انیمیشن‌ها خاموش می‌شوند.</span>
+        </div>
+        <div class="ds-panel ds-check">
+          <b>هدف لمسی</b>
+          <span>حداقل ۴۴×۴۴ پیکسل برای هر دکمه و آیکن، حتی آیکن‌های کوچک هدر.</span>
+        </div>
+        <div class="ds-panel ds-check">
+          <b>فرم</b>
+          <span>هر ورودی برچسب دارد؛ خطا با متن و اتصال <code dir="ltr">aria-describedby</code> اعلام می‌شود.</span>
+        </div>
+        <div class="ds-panel ds-check">
+          <b>RTL</b>
+          <span>همهٔ فاصله‌ها منطقی (inline) نوشته شده‌اند تا در راست‌به‌چپ و چپ‌به‌راست درست بمانند.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ds-foot">
+  <div class="ab-container">
+    عطار بلد — دیزاین سیستم v1.0 · فاز ۲ · توکن‌ها و اجزا آمادهٔ استفاده در صفحات فاز ۳
+  </div>
+</footer>
+
+</body>
+</html>
