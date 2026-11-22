@@ -343,3 +343,28 @@ a:hover { color: var(--ab-green-deep); }
 	.woocommerce ul.products { --ab-cols: 2; gap: var(--ab-sp-3); }
 	.woocommerce ul.products li.product { padding: var(--ab-sp-2); }
 }
+
+/* ── برند و جزیرهٔ سه‌بعدی (فاز ۵) ──────────────────────────────────────── */
+.ab-logo__seal img { display: block; width: 24px; height: 24px; }
+.ab-footer__brand .ab-logo__seal { width: 46px; height: 46px; }
+.ab-footer__brand .ab-logo__seal img { width: 28px; height: 28px; }
+.ab-btn--on-dark {
+  --ab-btn-bg: transparent;
+  --ab-btn-ink: var(--ab-cream);
+  --ab-btn-border: color-mix(in srgb, var(--ab-gold) 55%, transparent);
+}
+.ab-btn--on-dark:hover {
+  background: color-mix(in srgb, var(--ab-gold) 16%, transparent);
+  border-color: var(--ab-gold);
+  color: var(--ab-white);
+}
+.ab-history__actions { display: flex; flex-wrap: wrap; gap: var(--ab-sp-3); margin-block-start: var(--ab-sp-5); }
+.ab-3d {
+  margin-block-start: var(--ab-sp-5);
+  padding: var(--ab-sp-4);
+  border: 1px solid color-mix(in srgb, var(--ab-gold) 26%, transparent);
+  border-radius: var(--ab-r-xl);
+  background: color-mix(in srgb, var(--ab-white) 4%, transparent);
+}
+.ab-3d[hidden] { display: none; }
+.ab-3d attar-3d-viewer { display: block; }

@@ -33,14 +33,26 @@
     }
     var eras = $all(".ab-era");
     var caption = $("#eraCaption");
+    function applyEra(id) {
+      eras.forEach(function (other) {
+        var on = other.getAttribute("data-era") === id;
+        other.classList.toggle("is-active", on);
+        other.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      if (caption) caption.textContent = ERAS[id] || "";
+    }
     eras.forEach(function (era) {
       era.addEventListener("click", function () {
-        eras.forEach(function (other) { other.classList.remove("is-active"); other.setAttribute("aria-selected", "false"); });
-        era.classList.add("is-active");
-        era.setAttribute("aria-selected", "true");
-        if (caption) caption.textContent = ERAS[era.getAttribute("data-era")] || "";
+        var id = era.getAttribute("data-era");
+        applyEra(id);
+        var viewer = $("attar-3d-viewer");
+        if (viewer && viewer.setEra) viewer.setEra(id);
       });
     });
+    document.addEventListener("era-change", function (e) {
+      if (e.target && e.target.tagName === "ATTAR-3D-VIEWER" && e.detail) applyEra(e.detail.id);
+    });
+
     initNews();
   }
 

@@ -97,7 +97,19 @@
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/mag/">مطالعهٔ مقالات</a></div>
 <!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:html -->
+<div class="ab-history__actions" style="margin-top:24px">
+  <button class="ab-btn ab-btn--on-dark ab-btn--sm" type="button" id="history3dBtn" aria-expanded="false" aria-controls="history3d">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4.4v9.2L12 21l-8-4.4V7.4z"/><path d="m4 7.4 8 4.4 8-4.4"/><path d="M12 11.8V21"/></svg>
+    <span data-label>مشاهده در سه‌بعدی</span>
+  </button>
+</div>
+<div class="ab-3d" id="history3d" hidden>
+  <attar-3d-viewer data-active="persepolis"></attar-3d-viewer>
+</div>
+<!-- /wp:html --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"align":"full","className":"ab-trio","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained","wideSize":"1200px"}} -->

@@ -56,6 +56,39 @@ function ab_child_preload_fonts() {
 add_action( 'wp_head', 'ab_child_preload_fonts', 1 );
 
 /**
+ * جزیرهٔ سه‌بعدی (فاز ۵): وب‌کامپوننت <attar-3d-viewer>، بدون وابستگی خارجی.
+ */
+function ab_child_enqueue_viewer3d() {
+	$path = get_stylesheet_directory() . '/assets/js/viewer3d.js';
+	if ( ! file_exists( $path ) ) {
+		return;
+	}
+	wp_enqueue_script(
+		'ab-viewer3d',
+		get_stylesheet_directory_uri() . '/assets/js/viewer3d.js',
+		array(),
+		(string) filemtime( $path ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'ab_child_enqueue_viewer3d', 21 );
+
+/**
+ * فاوآیکن برند.
+ */
+function ab_child_favicon() {
+	$path = get_stylesheet_directory() . '/assets/brand/favicon.svg';
+	if ( ! file_exists( $path ) ) {
+		return;
+	}
+	printf(
+		'<link rel="icon" href="%s" type="image/svg+xml">' . "\n",
+		esc_url( get_stylesheet_directory_uri() . '/assets/brand/favicon.svg' )
+	);
+}
+add_action( 'wp_head', 'ab_child_favicon', 2 );
+
+/**
  * پشتیبانی ووکامرس و گالری محصول.
  */
 function ab_child_setup() {

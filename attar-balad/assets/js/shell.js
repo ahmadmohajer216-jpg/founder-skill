@@ -60,7 +60,7 @@
 
   function logo(size) {
     return '<a class="ab-logo" href="index.html" aria-label="عطار بلد — خانه">' +
-      '<span class="ab-logo__seal" aria-hidden="true"><svg><use href="#i-leaf"/></svg></span>' +
+      '<span class="ab-logo__seal" aria-hidden="true"><img src="assets/brand/logo-mark.svg" alt="" width="24" height="24"></span>' +
       '<span class="ab-logo__text"><span class="ab-logo__name">عطار بلد</span>' +
       '<span class="ab-logo__sub">ATTAR BALAD · عطاری اصیل</span></span></a>';
   }
@@ -126,6 +126,7 @@
     '<footer class="ab-footer"><div class="ab-container">' +
       '<div class="ab-footer__grid">' +
         '<div class="ab-footer__brand">' +
+          '<span class="ab-logo__seal" aria-hidden="true"><img src="assets/brand/logo-mark.svg" alt="" width="28" height="28"></span>' +
           '<span class="ab-logo__text"><span class="ab-logo__name">عطار بلد</span><span class="ab-logo__sub">ATTAR BALAD</span></span>' +
           '<p>طبیعت در خدمت سلامتی. گیاهان خشک، ادویه و عرقیات اصیل ایرانی، با تصویر و منبع تأییدشده.</p>' +
           '<a class="ab-row ab-sm" href="#" aria-label="اینستاگرام عطار بلد"><svg width="18" height="18"><use href="#i-instagram"/></svg> @attarbalad</a>' +
