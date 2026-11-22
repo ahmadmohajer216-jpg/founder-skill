@@ -1,0 +1,21 @@
+/*
+Theme Name: Attar Balad
+Theme URI: https://attar-balad.example
+Description: قالب فرزند عطار بلد روی قالب پایهٔ Twenty Twenty-Five؛ توکن‌ها، فونت‌های self-host و اجزای دیزاین سیستم فاز ۲ را به وردپرس و ووکامرس می‌آورد.
+Author: Attar Balad
+Author URI: https://attar-balad.example
+Template: twentytwentyfive
+Version: 0.1.0
+Requires at least: 6.5
+Requires PHP: 8.0
+Text Domain: attar-balad
+Tags: rtl-language-support, e-commerce, block-theme
+*/
+
+/*
+ * استایل واقعی در assets/css/ قرار دارد و از functions.php صف‌بندی می‌شود:
+ *   tokens.css      ← متغیرهای دیزاین سیستم (فاز ۲)
+ *   components.css  ← اجزای پایهٔ ab- (فاز ۲)
+ *   theme.css       ← نگاشت دیزاین سیستم به وردپرس و ووکامرس
+ * این فایل فقط سرصفحهٔ قالب و قواعد حداقلی پایه است.
+ */

@@ -1,0 +1,113 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "760px",
+			"wideSize": "1200px"
+		},
+		"color": {
+			"defaultPalette": false,
+			"palette": [
+				{ "slug": "green", "color": "#14532d", "name": "سبز عطار" },
+				{ "slug": "green-deep", "color": "#0e3d21", "name": "سبز تیره" },
+				{ "slug": "green-soft", "color": "#a3cfa5", "name": "سبز ملایم" },
+				{ "slug": "cream", "color": "#f7f3e8", "name": "کرم" },
+				{ "slug": "cream-deep", "color": "#efe9d8", "name": "کرم تیره" },
+				{ "slug": "gold", "color": "#c5a45b", "name": "طلایی" },
+				{ "slug": "gold-tint", "color": "#f3ead5", "name": "طلایی ملایم" },
+				{ "slug": "ink", "color": "#292d27", "name": "مرکب" },
+				{ "slug": "ink-muted", "color": "#5b6156", "name": "متن ثانویه" },
+				{ "slug": "white", "color": "#ffffff", "name": "سفید" }
+			],
+			"gradients": [
+				{
+					"slug": "cream-fade",
+					"gradient": "linear-gradient(180deg,#f7f3e8 0%,#efe9d8 100%)",
+					"name": "کرم محو"
+				}
+			]
+		},
+		"typography": {
+			"fluid": true,
+			"fontFamilies": [
+				{
+					"slug": "body",
+					"name": "Vazirmatn",
+					"fontFamily": "Vazirmatn, IRANSans, Tahoma, sans-serif"
+				},
+				{
+					"slug": "heading",
+					"name": "Estedad",
+					"fontFamily": "Estedad, Vazirmatn, Tahoma, sans-serif"
+				}
+			],
+			"fontSizes": [
+				{ "slug": "x-small", "size": "12px", "name": "ریز" },
+				{ "slug": "small", "size": "13px", "name": "کوچک" },
+				{ "slug": "base", "size": "16px", "name": "متن" },
+				{ "slug": "medium", "size": "17px", "name": "متن بزرگ" },
+				{ "slug": "large", "size": "20px", "name": "بزرگ" },
+				{ "slug": "x-large", "size": "clamp(24px, 2.4vw, 32px)", "name": "خیلی بزرگ" },
+				{ "slug": "xx-large", "size": "clamp(30px, 4vw, 44px)", "name": "تیتر" },
+				{ "slug": "huge", "size": "clamp(34px, 5vw, 56px)", "name": "تیتر قهرمان" }
+			]
+		},
+		"spacing": {
+			"units": [ "px", "rem", "%", "vw" ],
+			"spacingSizes": [
+				{ "slug": "10", "size": "4px", "name": "۱" },
+				{ "slug": "20", "size": "8px", "name": "۲" },
+				{ "slug": "30", "size": "12px", "name": "۳" },
+				{ "slug": "40", "size": "16px", "name": "۴" },
+				{ "slug": "50", "size": "24px", "name": "۵" },
+				{ "slug": "60", "size": "32px", "name": "۶" },
+				{ "slug": "70", "size": "48px", "name": "۷" },
+				{ "slug": "80", "size": "64px", "name": "۸" }
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|cream",
+			"text": "var:preset|color|ink"
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|body",
+			"fontSize": "var:preset|font-size|base",
+			"lineHeight": "1.8"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|heading",
+					"fontWeight": "700",
+					"lineHeight": "1.35"
+				}
+			},
+			"link": {
+				"color": { "text": "var:preset|color|green" },
+				"typography": { "textDecoration": "none" },
+				":hover": { "color": { "text": "var:preset|color|green-deep" } }
+			},
+			"button": {
+				"color": {
+					"background": "var:preset|color|green",
+					"text": "var:preset|color|white"
+				},
+				"border": { "radius": "999px" },
+				"typography": { "fontWeight": "600", "fontSize": "16px" },
+				"spacing": {
+					"padding": { "top": "12px", "bottom": "12px", "left": "24px", "right": "24px" }
+				},
+				":hover": {
+					"color": {
+						"background": "var:preset|color|green-deep",
+						"text": "var:preset|color|white"
+					}
+				}
+			}
+		}
+	}
+}
