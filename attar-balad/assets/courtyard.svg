@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="حیاط عطار بلد در غروب: قوس‌های ایرانی، کوه‌های دور، سرو و ابزار عطاری">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7dcae"/>
+      <stop offset="38%" stop-color="#eebc81"/>
+      <stop offset="72%" stop-color="#d99257"/>
+      <stop offset="100%" stop-color="#b9703f"/>
+    </linearGradient>
+
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff3d2" stop-opacity=".95"/>
+      <stop offset="45%" stop-color="#ffd79a" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#ffb877" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6c894" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#f6c894" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e2c49a"/>
+      <stop offset="55%" stop-color="#c9a577"/>
+      <stop offset="100%" stop-color="#9c7a52"/>
+    </linearGradient>
+
+    <linearGradient id="recess" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2c1e"/>
+      <stop offset="60%" stop-color="#5a432c"/>
+      <stop offset="100%" stop-color="#8a6a41"/>
+    </linearGradient>
+
+    <radialGradient id="recessLight" cx="50%" cy="88%" r="62%">
+      <stop offset="0%" stop-color="#f3c98a" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#f3c98a" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="ledge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3626"/>
+      <stop offset="100%" stop-color="#1e1710"/>
+    </linearGradient>
+
+    <linearGradient id="cypress" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3f5745"/>
+      <stop offset="100%" stop-color="#1c2a20"/>
+    </linearGradient>
+
+    <linearGradient id="groundShadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a130c" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1a130c" stop-opacity=".85"/>
+    </linearGradient>
+
+    <pattern id="tile" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#8fb0a4" opacity=".18"/>
+      <path d="M20 6 34 20 20 34 6 20z" fill="none" stroke="#2d4c46" stroke-width="1.4" opacity=".5"/>
+      <path d="M20 15 25 20 20 25 15 20z" fill="#c9a24d" opacity=".45"/>
+    </pattern>
+
+    <radialGradient id="vignette" cx="50%" cy="45%" r="72%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1b120a" stop-opacity=".7"/>
+    </radialGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="800" cy="360" r="330" fill="url(#sun)"/>
+
+  <!-- distant ranges -->
+  <path d="M0 436 150 358 300 412 432 340 566 402 706 332 866 406 1006 350 1166 412 1306 356 1452 406 1600 362v168H0z" fill="#7a7f90" opacity=".5"/>
+  <path d="M0 474 182 420 332 456 472 404 622 452 782 414 942 456 1102 420 1262 462 1422 424 1600 456v96H0z" fill="#4f5766" opacity=".62"/>
+  <rect x="0" y="424" width="1600" height="150" fill="url(#haze)" opacity=".7"/>
+
+  <!-- courtyard wall -->
+  <rect x="0" y="486" width="1600" height="414" fill="url(#wall)"/>
+  <rect x="0" y="486" width="1600" height="54" fill="url(#tile)" opacity=".9"/>
+  <rect x="0" y="486" width="1600" height="3" fill="#f0d9b0" opacity=".5"/>
+  <rect x="0" y="540" width="1600" height="2" fill="#8d6c46" opacity=".4"/>
+
+  <!-- arcade: five recesses, the middle one the iwan -->
+  <g>
+    <!-- 1 -->
+    <path d="M92 838V678c0-56 34-96 78-96s78 40 78 96v160z" fill="url(#recess)"/>
+    <path d="M92 838V678c0-56 34-96 78-96s78 40 78 96v160z" fill="url(#recessLight)"/>
+    <!-- 2 -->
+    <path d="M330 838V672c0-60 36-102 84-102s84 42 84 102v166z" fill="url(#recess)"/>
+    <path d="M330 838V672c0-60 36-102 84-102s84 42 84 102v166z" fill="url(#recessLight)"/>
+    <!-- 3: iwan -->
+    <path d="M600 838V640c0-84 48-140 112-140s112 56 112 140v198z" fill="url(#recess)"/>
+    <path d="M600 838V640c0-84 48-140 112-140s112 56 112 140v198z" fill="url(#recessLight)"/>
+    <path d="M600 838V640c0-84 48-140 112-140s112 56 112 140v198" fill="none" stroke="#d9b783" stroke-width="3" opacity=".55"/>
+    <path d="M628 838V652c0-68 38-114 84-114s84 46 84 114v186" fill="none" stroke="#2f2418" stroke-width="2.5" opacity=".35"/>
+    <!-- 4 -->
+    <path d="M902 838V672c0-60 36-102 84-102s84 42 84 102v166z" fill="url(#recess)"/>
+    <path d="M902 838V672c0-60 36-102 84-102s84 42 84 102v166z" fill="url(#recessLight)"/>
+    <!-- 5 -->
+    <path d="M1140 838V678c0-56 34-96 78-96s78 40 78 96v160z" fill="url(#recess)"/>
+    <path d="M1140 838V678c0-56 34-96 78-96s78 40 78 96v160z" fill="url(#recessLight)"/>
+  </g>
+
+  <!-- cypress trees -->
+  <g>
+    <path d="M148 838c-14-58-16-118-6-176 6-34 18-62 24-96 6 34 18 62 24 96 10 58 8 118-6 176z" fill="url(#cypress)"/>
+    <path d="M156 838c-8-52-8-104 0-152 4-26 8-46 10-70 2 24 6 44 10 70 8 48 8 100 0 152z" fill="#26382b" opacity=".8"/>
+    <path d="M1452 838c-14-58-16-118-6-176 6-34 18-62 24-96 6 34 18 62 24 96 10 58 8 118-6 176z" fill="url(#cypress)"/>
+    <path d="M1460 838c-8-52-8-104 0-152 4-26 8-46 10-70 2 24 6 44 10 70 8 48 8 100 0 152z" fill="#26382b" opacity=".8"/>
+  </g>
+
+  <!-- ground haze + ledge -->
+  <rect x="0" y="748" width="1600" height="152" fill="url(#groundShadow)"/>
+  <rect x="0" y="806" width="1600" height="94" fill="url(#ledge)"/>
+  <rect x="0" y="806" width="1600" height="2" fill="#c9a24d" opacity=".35"/>
+
+  <!-- still life on the ledge -->
+  <g fill="#241a11" opacity=".92">
+    <!-- stacked books -->
+    <rect x="392" y="742" width="164" height="16" rx="3" transform="rotate(-1.4 392 742)"/>
+    <rect x="404" y="726" width="150" height="15" rx="3" fill="#2e2115" transform="rotate(.8 404 726)"/>
+    <rect x="416" y="711" width="132" height="14" rx="3" fill="#3a2a1a" transform="rotate(-2 416 711)"/>
+    <!-- open book -->
+    <path d="M392 742c26-8 50-8 72 0-22 8-46 8-72 0z" fill="#e7d2ab" opacity=".22"/>
+
+    <!-- mortar and pestle -->
+    <path d="M600 700h96l-10 58c-2 10-10 16-20 16h-36c-10 0-18-6-20-16z" fill="#2f2216"/>
+    <path d="M600 700h96l-2 12h-92z" fill="#4a3624"/>
+    <rect x="640" y="742" width="70" height="7" rx="3.5" fill="#3b2b1b" transform="rotate(-52 640 742)"/>
+
+    <!-- oil bottle -->
+    <path d="M716 762h30v-40c0-6 4-8 4-14v-12h-8v12c0 6-4 8-4 14v40z" fill="#33402f"/>
+    <circle cx="731" cy="758" r="7" fill="#c9a24d" opacity=".5"/>
+
+    <!-- herb sprigs -->
+    <g stroke="#2a3d2c" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M772 786c6-26 4-48-4-70"/>
+      <path d="M786 786c2-26-2-46-10-64"/>
+      <path d="M800 786c8-24 8-44 2-64"/>
+    </g>
+    <g fill="#35503a">
+      <ellipse cx="764" cy="740" rx="11" ry="6" transform="rotate(-28 764 740)"/>
+      <ellipse cx="776" cy="716" rx="10" ry="5.5" transform="rotate(-20 776 716)"/>
+      <ellipse cx="790" cy="746" rx="11" ry="6" transform="rotate(24 790 746)"/>
+      <ellipse cx="798" cy="722" rx="10" ry="5.5" transform="rotate(16 798 722)"/>
+      <ellipse cx="810" cy="748" rx="10" ry="5.5" transform="rotate(-18 810 748)"/>
+    </g>
+
+    <!-- saffron threads in a small bowl -->
+    <path d="M836 770h64l-8 20h-48z" fill="#3b2b1b"/>
+    <g stroke="#b5651d" stroke-width="2.5" stroke-linecap="round">
+      <path d="M852 770c2-8 6-12 12-14"/>
+      <path d="M866 770c0-8 2-14 8-18"/>
+      <path d="M880 770c-2-8-6-12-10-14"/>
+    </g>
+  </g>
+
+  <!-- warm rim light along the ledge -->
+  <rect x="0" y="806" width="1600" height="6" fill="#e0b276" opacity=".18"/>
+
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+</svg>
